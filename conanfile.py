@@ -51,6 +51,7 @@ class VorbisConan(ConanFile):
         self.cpp_info.set_property("cmake_file_name", "Vorbis")
 
         self.cpp_info.components["vorbis"].libs = ["vorbis"]
+        self.cpp_info.components["vorbis"].requires = ["ogg::ogg"]
         self.cpp_info.components["vorbis"].set_property("cmake_target_name", "Vorbis::vorbis")
 
         if self.settings.os == "Linux":
